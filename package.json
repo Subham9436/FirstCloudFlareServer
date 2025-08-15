@@ -4,13 +4,14 @@
 	"private": true,
 	"scripts": {
 		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
+		"dev": "cross-env CHOKIDAR_USEPOLLING=true wrangler dev  --live-reload",
 		"start": "wrangler dev",
 		"test": "vitest",
 		"cf-typegen": "wrangler types"
 	},
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.8.19",
+		"cross-env": "^10.0.0",
 		"typescript": "^5.5.2",
 		"vitest": "~3.2.0",
 		"wrangler": "^4.30.0"
